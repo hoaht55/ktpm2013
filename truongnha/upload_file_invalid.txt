@@ -1,0 +1,27 @@
+*** Settings ***
+
+Documentation  Test chức năng Upload file thông tin lớp học
+Suite Setup     Open Browser To Login Page	
+Test Setup      Go To Trường Nhà
+Suite Teardown  Close Browser	
+Resource       	html_resource.txt
+*** Test Cases ***	
+Not Excel Files
+	Auto Login
+	Select Test Class
+	Select List Menu
+	Set Selenium Speed  3
+	Click Element	import
+	Choose File	 xpath=//input[@name='files[]']	${CURDIR}${/}log.html
+	Page Should Contain Element	xpath=//td[@class='error']['Không phải file Excel']
+	Click Element	upload-modal-exit
+Not Right Excel Files
+	Select Test Class
+	Select List Menu
+	Set Selenium Speed  3
+	Click Element	import
+	Choose File	 xpath=//input[@name='files[]']	${CURDIR}${/}B2.xls
+	Click Element 	xpath=//td[@class='start']/button[@class='btn btn-primary']
+	Page Should Contain Element	xpath=//td[@class='error']
+	Click Element	upload-modal-exit	
+	Auto Logout

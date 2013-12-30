@@ -34,10 +34,11 @@ VD: >pybot login_tests\valid_login.txt
 
 /***************************************************/
 III) Các chức năng kiểm thử
-Số lượng các chức năng kiểm thử: 3
+Số lượng các chức năng kiểm thử: 4
 1) Chức năng đăng nhập
 2) Chức năng thêm sinh viên
-3) Chưc năng xóa sinh viên 
+3) Chưc năng xóa sinh viên
+4) Tải file từ máy tính 
 
 
 ************Chức năng đăng nhập************
@@ -53,6 +54,11 @@ Số lượng các chức năng kiểm thử: 3
 ************Chức năng xóa sinh viên**************
 - Số lượng test case: 3
 + passed: 3
++ failed: 0
+
+***********Chức năng tải file từ máy tính*********
+- Số lượng test case: 2
++ passed:2
 + failed: 0
 
 /**************************************************/
